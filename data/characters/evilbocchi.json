@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "name": "evilbocchi",
+  "assetPath": "shared:characters/evilbocchi",
+  "healthIcon": {
+    "id": "evilbocchi"
+  },
+  "renderType": "animateatlas",
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "hitori/Poses/Idle",
+      "looped": true,
+      "frameRate": 1
+    },
+    {
+      "name": "singUP",
+      "prefix": "hitori/Poses/Up",
+      "frameRate": 1
+    },
+    {
+      "name": "singLEFT",
+      "prefix": "hitori/Poses/Left",
+      "frameRate": 1
+    },
+    {
+      "name": "singDOWN",
+      "prefix": "hitori/Poses/Down",
+      "frameRate": 1
+    },
+    {
+      "name": "singRIGHT",
+      "prefix": "hitori/Poses/Right",
+      "frameRate": 1
+    }
+  ]
+}

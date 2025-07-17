@@ -1,0 +1,51 @@
+{
+  "version": "2.2.4",
+  "songName": "yoylefake",
+  "artist": "Ezzy",
+  "looped": false,
+  "offsets": {
+    "instrumental": 0,
+    "altInstrumentals": {    },
+    "vocals": {    },
+    "altVocals": {    }
+  },
+  "playData": {
+    "songVariations": [    ],
+    "difficulties": [
+      "normal"
+    ],
+    "characters": {
+      "player": "blocky1",
+      "girlfriend": "gf",
+      "opponent": "fakebubble",
+      "instrumental": "",
+      "playerVocals": [
+        "blockys"
+      ]
+    },
+    "stage": "yoylefake",
+    "noteStyle": "funkin",
+    "ratings": {
+      "normal": 6
+    },
+    "previewStart": 0,
+    "previewEnd": 150000
+  },
+  "generatedBy": "Friday Night Funkin' - v0.6.4",
+  "timeFormat": "ms",
+  "timeChanges": [
+    {
+      "t": 0,
+      "b": 0,
+      "bpm": 173,
+      "n": 4,
+      "d": 4,
+      "bt": [
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  ]
+}

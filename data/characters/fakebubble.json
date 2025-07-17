@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "name": "fakebubble",
+  "assetPath": "characters/yoylefake/bubbleaethosFIRST",
+  "renderType": "sparrow",
+  "offsets": [
+		125,
+		15
+	],
+  "cameraOffsets": [
+    175,
+		0
+  ],
+  "healthIcon": {
+    "id": "bubble"
+  },
+  "flipX": false,
+  "animations": [
+    {
+      "offsets": [
+				10,
+				30
+			],
+      "loop": true,
+      "name": "idle",
+      "prefix": "idle"
+    },
+    {
+      "offsets": [
+				40,
+				82
+			],
+      "name": "singUP",
+      "prefix": "up"
+    },
+    {
+      "offsets": [
+				47,
+				29
+			],
+      "name": "singLEFT",
+      "prefix": "left"
+    },
+    {
+      "offsets": [
+				8,
+				1
+			],
+      "name": "singDOWN",
+      "prefix": "down"
+    },
+    {
+      "offsets": [
+				-48,
+				44
+			],
+      "name": "singRIGHT",
+      "prefix": "right"
+    }
+  ]
+}

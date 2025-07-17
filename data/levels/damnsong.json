@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "name": "damnsong",
+  "titleAsset": "storymenu/titles/week1",
+  "visible": false,
+  "background": "#800020",
+  "props": [],
+  "songs": ["guitarvillain","yoylefake"]
+}

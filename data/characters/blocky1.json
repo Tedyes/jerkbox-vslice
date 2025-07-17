@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "name": "blocky1",
+  "assetPath": "characters/yoylefake/blockyaethosFIRST",
+  "renderType": "sparrow",
+  "offsets": [
+		-100,
+		0
+	],
+  "cameraOffsets": [
+    -50,
+		0
+  ],
+  "healthIcon": {
+    "id": "blocky"
+  },
+  "flipX": true,
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "idle"
+    },
+    {
+      "name": "singUP",
+      "prefix": "up",
+      "offsets": [
+				438,
+				176
+			]
+    },
+    {
+      "name": "singLEFT",
+      "prefix": "right",
+      "offsets": [
+				20,
+				10
+			]
+    },
+    {
+      "name": "singDOWN",
+      "prefix": "down",
+      "offsets": [
+				-32,
+				-32
+			]
+    },
+    {
+      "name": "singRIGHT",
+      "prefix": "left",
+      "offsets": [
+				-95,
+				16
+			]
+    }
+  ]
+}

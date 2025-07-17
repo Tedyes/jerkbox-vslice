@@ -1,0 +1,53 @@
+{
+  "version": "1.0.0",
+  "name": "dirtybubretro",
+  "assetPath": "characters/yoylefake/dirtybubbleretro",
+  "renderType": "sparrow",
+  "healthIcon": {
+    "id": "dirtybubble"
+  },
+  "flipX": false,
+  "animations": [
+    {
+      "offsets": [
+				10,
+				30
+			],
+      "loop": true,
+      "name": "idle",
+      "prefix": "idle"
+    },
+    {
+      "offsets": [
+				106,
+				69
+			],
+      "name": "singUP",
+      "prefix": "up"
+    },
+    {
+      "offsets": [
+				70,
+				31
+			],
+      "name": "singLEFT",
+      "prefix": "left"
+    },
+    {
+      "offsets": [
+				10,
+				7
+			],
+      "name": "singDOWN",
+      "prefix": "down"
+    },
+    {
+      "offsets": [
+				-26,
+				52
+			],
+      "name": "singRIGHT",
+      "prefix": "right"
+    }
+  ]
+}

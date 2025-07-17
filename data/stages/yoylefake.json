@@ -1,0 +1,39 @@
+{
+  "props": [
+    {
+      "zIndex": 0,
+      "position": [-200,-300],
+      "name": "fakeoutsky",
+      "assetPath": "stages/yoylefake/fakeoutsky",
+      "scroll": [0,0]
+    },
+    {
+      "zIndex": 1,
+      "position": [0,600],
+      "name": "fakeout",
+      "assetPath": "stages/yoylefake/fakeout",
+      "scroll": [1,1]
+    }
+  ],
+  "cameraZoom": 0.85,
+  "version": "1.0.0",
+  "characters": {
+    "bf": {
+      "zIndex": 300,
+      "position": [1935, 905],
+      "cameraOffsets": [-285,-90]
+    },
+    "dad": {
+      "zIndex": 200,
+      "position": [895,890],
+      "cameraOffsets": [205,-50]
+    },
+    "gf": {
+      "zIndex": -1000,
+      "cameraOffsets": [0, 0],
+      "position": [100000,0]
+    }
+  },
+  "name": "yoylefake",
+  "directory": ""
+}

@@ -1,0 +1,14 @@
+{
+  "title": "jerkbox-vslice",
+  "description": "i kms",
+  "contributors": [
+    {
+      "name": "tedyes",
+      "role": "uh",
+      "url": ""
+    }
+  ],
+  "api_version": "0.6.3",
+  "mod_version": "1.3.0",
+  "license": "Apache-2.0"
+}

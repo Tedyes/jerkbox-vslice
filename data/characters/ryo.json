@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "name": "ryo",
+  "assetPath": "shared:characters/ryo",
+  "healthIcon": {
+    "id": "ryo"
+  },
+  "renderType": "animateatlas",
+  "flipX": true,
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "ryo/Poses/Idle",
+      "looped": true,
+      "frameRate": 1
+    },
+    {
+      "name": "singUP",
+      "prefix": "ryo/Poses/Up",
+      "frameRate": 1
+    },
+    {
+      "name": "singLEFT",
+      "prefix": "ryo/Poses/Left",
+      "frameRate": 1
+    },
+    {
+      "name": "singDOWN",
+      "prefix": "ryo/Poses/Down",
+      "frameRate": 1
+    },
+    {
+      "name": "singRIGHT",
+      "prefix": "ryo/Poses/Right",
+      "frameRate": 1
+    }
+  ]
+}

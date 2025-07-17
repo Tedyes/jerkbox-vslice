@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "name": "blocky2",
+  "assetPath": "characters/yoylefake/serious-blocky",
+  "renderType": "sparrow",
+  "healthIcon": {
+    "id": "blocky2"
+  },
+  "flipX": true,
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "idle"
+    },
+    {
+      "offsets": [
+				44,
+				42
+			],
+      "name": "singUP",
+      "prefix": "up"
+    },
+    {
+      "offsets": [
+				57,
+				-21
+			],
+      "name": "singLEFT",
+      "prefix": "left"
+    },
+    {
+      "offsets": [
+				48,
+				-25
+			],
+      "name": "singDOWN",
+      "prefix": "down"
+    },
+    {
+      "offsets": [
+				84,
+				2
+			],
+      "name": "singRIGHT",
+      "prefix": "right"
+    }
+  ]
+}

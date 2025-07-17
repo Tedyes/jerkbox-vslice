@@ -1,0 +1,39 @@
+import flixel.tweens.FlxEase;
+import funkin.graphics.FunkinSprite;
+import flixel.tweens.FlxTween;
+import funkin.Paths;
+import funkin.play.PlayState;
+import funkin.play.song.Song;
+import flixel.FlxG;
+import flixel.FlxSprite;
+
+class yoylefakeSong extends Song {
+  var leftBar:FlxSprite;
+	var rightBar:FlxSprite;
+
+	public function new() {
+		super('yoylefake');
+	}
+
+  override function onCreate(event) {
+		super.onCreate(event);
+
+    PlayState.instance.insert(0,leftBar = new FlxSprite().makeGraphic(215, FlxG.height, 0xFF000000)).updateHitbox();
+    leftBar.cameras = [PlayState.instance.camHUD];
+    PlayState.instance.insert(0,rightBar = new FlxSprite(1050).makeGraphic(270, FlxG.height, 0xFF000000)).updateHitbox();
+    rightBar.cameras = [PlayState.instance.camHUD];
+	}
+
+  override function onUpdate(event:UpdateScriptEvent):Void {
+		super.onUpdate(event);
+
+    PlayState.instance.vocals.volume = 1;
+    speedGoat(FlxG.keys.pressed.TWO);
+	}
+
+  function speedGoat(haha):Void {
+    FlxG.timeScale = (haha) ? 10 : 1;
+    PlayState.instance.isBotPlayMode = haha;
+		PlayState.instance.health = (haha) ? 2 : PlayState.instance.health;
+  }
+}
