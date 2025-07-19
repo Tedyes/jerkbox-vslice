@@ -6,26 +6,48 @@ import funkin.play.PlayState;
 import funkin.play.song.Song;
 import flixel.FlxG;
 import flixel.FlxSprite;
+import funkin.graphics.FunkinCamera;
+import funkin.util.Constants;
+import flixel.text.FlxText;
 
 class yoylefakeSong extends Song {
   var leftBar:FlxSprite;
 	var rightBar:FlxSprite;
+  var camOther:FunkinCamera;
+  var title:FlxText;
 
 	public function new() {
 		super('yoylefake');
+    Constants.STRUMLINE_X_OFFSET = 85;
 	}
 
-  override function onCreate(event) {
-		super.onCreate(event);
+  public function onSongRetry(ev):Void{
+    super.onSongRetry(ev);
+    FlxG.resetState();
+  }
+
+  override function onCreate(_) {
+		super.onCreate(_);
+
+    FlxG.cameras.add(camOther = new FunkinCamera('camOther'), false).bgColor = 0x0;
+    FlxG.camera.alpha = PlayState.instance.camHUD.alpha = 0;
 
     PlayState.instance.insert(0,leftBar = new FlxSprite().makeGraphic(215, FlxG.height, 0xFF000000)).updateHitbox();
     leftBar.cameras = [PlayState.instance.camHUD];
-    PlayState.instance.insert(0,rightBar = new FlxSprite(1050).makeGraphic(270, FlxG.height, 0xFF000000)).updateHitbox();
+    PlayState.instance.insert(0,rightBar = new FlxSprite(FlxG.width-225).makeGraphic(225, FlxG.height, 0xFF000000)).updateHitbox();
     rightBar.cameras = [PlayState.instance.camHUD];
+
+    title = new FlxText(0, 325, FlxG.width, "BFDI 26: YOYLEFAKE", 75);
+    title.font = Paths.font('Shag-Lounge.otf');
+		title.zIndex = 600;
+		title.alignment = 'center';
+    title.cameras = [camOther];
+    title.alpha = 0;
+    PlayState.instance.add(title);
 	}
 
-  override function onUpdate(event:UpdateScriptEvent):Void {
-		super.onUpdate(event);
+  override function onUpdate(_:UpdateScriptEvent):Void {
+		super.onUpdate(_);
 
     PlayState.instance.vocals.volume = 1;
     speedGoat(FlxG.keys.pressed.TWO);
@@ -35,5 +57,38 @@ class yoylefakeSong extends Song {
     FlxG.timeScale = (haha) ? 10 : 1;
     PlayState.instance.isBotPlayMode = haha;
 		PlayState.instance.health = (haha) ? 2 : PlayState.instance.health;
+  }
+
+  override function onBeatHit(_:SongTimeScriptEvent):Void{
+		super.onBeatHit(_);
+
+    switch(_.beat){
+      case 4:
+        FlxTween.tween(title, {alpha: 1}, 1.5);
+      case 16:
+        FlxTween.color(title, 2, -1, 0xFFFF0000);
+      case 26:
+        FlxTween.tween(title, {y: 325 + 750}, 1.25,{ease: FlxEase.cubeInOut});
+        FlxTween.tween(title, {angle: 45}, 3,{ease: FlxEase.sineOut});
+      case 28:
+        FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1.5);
+        FlxTween.tween(title, {alpha: 0}, 1.5);
+      case 32:
+        FlxG.camera.alpha = 1;
+        FlxG.camera.flash(-1, 0.4);
+      case 95:
+        for (i in [PlayState.instance.currentStage.getDad(),PlayState.instance.currentStage.getBoyfriend()]) 
+          FlxTween.color(i, 0.4, -1, 0xFFFF0000,{ease: FlxEase.quadOut});
+        for(i in ['fakeoutsky', 'fakeout'])
+          FlxTween.color(PlayState.instance.currentStage.getNamedProp(i), 0.4, -1, 0xFF000000,{ease: FlxEase.quadOut});
+      case 96:
+        FlxG.camera.flash(0xFFFF0000, 1);
+        FlxTween.tween(leftBar, {x: -215}, 1,{ease: FlxEase.expoOut});
+        FlxTween.tween(rightBar, {x: FlxG.width}, 1,{ease: FlxEase.expoOut});
+        PlayState.instance.opponentStrumline.x = PlayState.instance.currentStage.getDad().x;
+        PlayState.instance.opponentStrumline.y = PlayState.instance.currentStage.getDad().y;
+        for (i in PlayState.instance.opponentStrumline.members)
+          i.cameras = [FlxG.camera];
+    }
   }
 }
