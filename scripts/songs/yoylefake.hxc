@@ -1,6 +1,7 @@
 import flixel.tweens.FlxEase;
 import funkin.graphics.FunkinSprite;
 import flixel.tweens.FlxTween;
+import flixel.math.FlxMath;
 import funkin.Paths;
 import funkin.play.PlayState;
 import funkin.play.song.Song;
@@ -33,9 +34,9 @@ class yoylefakeSong extends Song {
     FlxG.camera.alpha = PlayState.instance.camHUD.alpha = 0;
 
     PlayState.instance.insert(0,leftBar = new FlxSprite().makeGraphic(215, FlxG.height, 0xFF000000)).updateHitbox();
-    leftBar.cameras = [PlayState.instance.camHUD];
+    leftBar.cameras = [camOther];
     PlayState.instance.insert(0,rightBar = new FlxSprite(FlxG.width-225).makeGraphic(225, FlxG.height, 0xFF000000)).updateHitbox();
-    rightBar.cameras = [PlayState.instance.camHUD];
+    rightBar.cameras = [camOther];
 
     title = new FlxText(0, 325, FlxG.width, "BFDI 26: YOYLEFAKE", 75);
     title.font = Paths.font('Shag-Lounge.otf');
@@ -44,6 +45,17 @@ class yoylefakeSong extends Song {
     title.cameras = [camOther];
     title.alpha = 0;
     PlayState.instance.add(title);
+
+    FlxG.cameras.remove(PlayState.instance.camCutscene, false);
+		FlxG.cameras.add(PlayState.instance.camCutscene, false);
+    PlayState.instance.comboPopUps.visible = false;
+    PlayState.instance.opponentStrumline.showNotesplash = false;
+    PlayState.instance.playerStrumline.useCustomRenderDistance = PlayState.instance.opponentStrumline.useCustomRenderDistance = true;
+    PlayState.instance.playerStrumline.customRenderDistanceMs = PlayState.instance.opponentStrumline.customRenderDistanceMs = 1000000;
+
+    fakeAss(true);
+    for(i in ['happyness'])
+      PlayState.instance.currentStage.getNamedProp(i).visible = false;
 	}
 
   override function onUpdate(_:UpdateScriptEvent):Void {
@@ -57,6 +69,13 @@ class yoylefakeSong extends Song {
     FlxG.timeScale = (haha) ? 10 : 1;
     PlayState.instance.isBotPlayMode = haha;
 		PlayState.instance.health = (haha) ? 2 : PlayState.instance.health;
+  }
+
+  function fakeAss(ok:Bool){
+		for (i in [PlayState.instance.iconP1, PlayState.instance.iconP2, PlayState.instance.healthBar, PlayState.instance.healthBarBG, PlayState.instance.scoreText]) i.visible = !ok;
+    PlayState.instance.camHUD.zoom = ok ? 0.75 : 1;
+    PlayState.instance.defaultHUDCameraZoom = ok ? 0.75 : 1;
+    PlayState.instance.camHUD.scroll.y = ok ? -100 : 0;
   }
 
   override function onBeatHit(_:SongTimeScriptEvent):Void{
@@ -82,13 +101,19 @@ class yoylefakeSong extends Song {
         for(i in ['fakeoutsky', 'fakeout'])
           FlxTween.color(PlayState.instance.currentStage.getNamedProp(i), 0.4, -1, 0xFF000000,{ease: FlxEase.quadOut});
       case 96:
+        for(i in ['fakeoutsky', 'fakeout'])
+          PlayState.instance.currentStage.getNamedProp(i).visible = false;
+        for(i in ['happyness'])
+          PlayState.instance.currentStage.getNamedProp(i).visible = true;
         FlxG.camera.flash(0xFFFF0000, 1);
+        PlayState.instance.cameraZoomRate = 1;
+        PlayState.instance.tweenCameraZoom(0.8, 1.5, false, FlxEase.sineOut);
+        fakeAss(false);
         FlxTween.tween(leftBar, {x: -215}, 1,{ease: FlxEase.expoOut});
         FlxTween.tween(rightBar, {x: FlxG.width}, 1,{ease: FlxEase.expoOut});
-        PlayState.instance.opponentStrumline.x = PlayState.instance.currentStage.getDad().x;
-        PlayState.instance.opponentStrumline.y = PlayState.instance.currentStage.getDad().y;
-        for (i in PlayState.instance.opponentStrumline.members)
-          i.cameras = [FlxG.camera];
+        PlayState.instance.opponentStrumline.x = PlayState.instance.currentStage.getDad().x-150;
+        PlayState.instance.opponentStrumline.y = PlayState.instance.currentStage.getDad().y+500;
+        PlayState.instance.opponentStrumline.camera = FlxG.camera;
     }
   }
 }

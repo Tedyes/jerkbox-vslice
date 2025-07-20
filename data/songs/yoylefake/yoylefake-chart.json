@@ -1,8 +1,8 @@
 {
   "version": "2.0.0",
   "scrollSpeed": {
-    "normal": 3,
-    "default": 3
+    "default": 3,
+    "normal": 3
   },
   "events": [
     {
@@ -34,23 +34,23 @@
 }
     },
     {
-      "t": 33394.7976878613,
-      "e": "Change Character",
+      "t": 33294.7976878613,
+      "e": "ChangeCharacter",
       "v": {
-	"char": "blocky2",
-	"target": "bf"
+	"newchar": "blocky2",
+	"character": "bf"
 }
     },
     {
-      "t": 33394.7976878613,
-      "e": "Change Character",
+      "t": 33294.7976878613,
+      "e": "ChangeCharacter",
       "v": {
-	"char": "dirtybub1",
-	"target": "dad"
+	"newchar": "dirtybub1",
+	"character": "dad"
 }
     },
     {
-      "t": 33394.7976878613,
+      "t": 33294.7976878613,
       "e": "FocusCamera",
       "v": {
 	"char": 0
@@ -176,22 +176,6 @@
 }
     },
     {
-      "t": 110990.658959538,
-      "e": "Change Character",
-      "v": {
-	"char": "blocky1",
-	"target": "bf"
-}
-    },
-    {
-      "t": 110990.658959538,
-      "e": "Change Character",
-      "v": {
-	"char": "dirtybubretro",
-	"target": "dad"
-}
-    },
-    {
       "t": 116531.791907514,
       "e": "FocusCamera",
       "v": {
@@ -210,22 +194,6 @@
       "e": "FocusCamera",
       "v": {
 	"char": 0
-}
-    },
-    {
-      "t": 138828.323699422,
-      "e": "Change Character",
-      "v": {
-	"char": "bf",
-	"target": "dad"
-}
-    },
-    {
-      "t": 138828.323699422,
-      "e": "Change Character",
-      "v": {
-	"char": "bf",
-	"target": "bf"
 }
     },
     {
